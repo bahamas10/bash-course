@@ -1,0 +1,4 @@
+- voltagegp in twitch - check out Unix for the Beginning Mage
+- check out other courses to get an idea of depth
+
+.bashrc starter file?
