@@ -2,3 +2,11 @@
 - check out other courses to get an idea of depth
 
 .bashrc starter file?
+
+
+# give the users a simple virtualized instance they can use for practice and
+learning with no risk of breaking their own system.
+vbox
+vbox specific iso
+
+multipass
