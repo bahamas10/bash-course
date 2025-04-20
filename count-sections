@@ -1,0 +1,18 @@
+#!/usr/bin/awk -f
+
+/^Course Outline$/ {
+	flag = 1;
+}
+
+/^Metadata$/ {
+	flag = 0;
+}
+
+flag == 1 && /^- / {
+	total++;
+	print $0;
+}
+
+END {
+	printf("%d sections\n", total);
+}

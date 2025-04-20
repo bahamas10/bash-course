@@ -179,12 +179,13 @@ Num Chapters ~ 18 chapters total
     hidden files?
 
 - Search inside files (grep)
-
-use unix.daveeddy.com as a loose guide
-/usr/share/dict/words - check if this exists
-gutenberg free books - wget some and grep them
-head/tail
-bg/fg
+  - answer the previous homework
+  - show /usr/share/dict/words
+  - grep it for dave
+  - let's make our own files
+  - `touch file.txt`
+  - `echo hello`
+  - `echo hello > file.txt`
 
 ansi/ascii/control characters (ex: cat /bin/my-binary-file)
 
