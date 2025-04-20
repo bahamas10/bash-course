@@ -10,3 +10,5 @@ vbox
 vbox specific iso
 
 multipass
+
+look up uutils - rust rewrite of coreutils in ubuntu october 2025

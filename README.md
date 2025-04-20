@@ -53,7 +53,7 @@ Basic task automations with scripts - how to take a series of commands and run
 them all at once.
 
 Complex task automations with scripts - introduce conditional branching, string
-manipulation.
+manipulation, etc.
 
 Finally, feel proficient in a CLI environment - be able to edit files (nano,
 vim) and rename files in batches. (example mismatch of .jpg and .JPG files -
@@ -122,21 +122,22 @@ Num Chapters ~ 18 chapters total
   - Terminal emulators for modern PCs
   - Basic text rendering on a monospace font
   - 80x24, ASCII, vt100s
+  - Cool retro aesthetic
   - Why the were useful (no gui) and why they are still useful (no gui) today
   - Shell runs in the terminal (segue into next chapter)
 
 - What is a shell?
   - Basic input / output
-  - REPL and simple iteration loop (state machine, maybe)
+  - REPL (read-eval-print-loop) and simple iteration loop (state machine, maybe)
   - Managing command execution and optionally displaying to the above terminal
-  - No output is good - error loudly
-  - Bash is a shell, just like bourne/csh/fish/powershell/nushell/ksh/etc.
+  - No output is good - error loudly (unix philosophy touch on)
+  - Bash is a shell, just like bourne/csh/fish/powershell/nushell/ksh/zsh/etc.
   - Recap: shell runs in the terminal
 
 - Getting up and running
   - Explain the environment (ubuntu desktop)
   - Go over how to replicate it
-    - Use a vbox VM
+    - Use a vbox VM (dave doesn't even know how to do this lol)
     - Use ubuntu on your actual machine
     - Just follow along (there will be homework I encourage you to do)
     - If you don't have linux you can still get something out of this - but your
@@ -160,7 +161,7 @@ Num Chapters ~ 18 chapters total
   files
   - homework: basic filesystem manipulation
 
-- Basic Command Execution (cont)
+- Basic File Manipulation
   - also, it can be easy to get lost, here's `pwd`
   - `touch lesson-1.txt`
   - edit
@@ -175,17 +176,107 @@ Num Chapters ~ 18 chapters total
   - `alias rm='rm -i'`
   - `touch .lesson.txt`
   - `ls`
+  - take inventory - we've done a lot of commands - 2 useful tricks
+    1. Press `up` on your keyboard to go through old commands
+    2. run `history` to see the commands you run
+    3. Tab complete!
   - homework: list the hidden file what - argument/flag can i give `ls` to see
-    hidden files?
+    hidden files? feel free to use google
 
 - Search inside files (grep)
   - answer the previous homework
-  - show /usr/share/dict/words
+  - show `/usr/share/dict/words`
   - grep it for dave
   - let's make our own files
   - `touch file.txt`
   - `echo hello`
   - `echo hello > file.txt`
+  - `echo a >> file.txt`, b, c
+  - `grep b file.txt`
+  - `grep -A1 b file.txt`, -B, -C
+  - open it with a text editor and add random words
+  - `grep -i ...`
+  - `grep -o ...`, `grep -v ...`
+  - `cat file.txt | grep -v ... | grep -o ...` #  subtle intro of pipelines
+  - TODO homework
+
+- Pager (big files)
+  - `cat /usr/share/dict/words`
+  - it's a big file and annoying let's do this
+  - `less /usr/share/dict/words`
+  - teach less
+  - `cat /usr... | less`
+  - `cat ... | grep | less`
+  - `man less`
+  - search with /
+  - also show `more`
+  - `less file.txt`
+  - `cat file.txt | less`
+  - Homework: use `man` to look at other commands manuals
+
+- Man pages
+  - `man ls` - this is how we could answer the earlier homework without google
+  - `man man` - this is a fun one
+  - talk about sections
+  - when you run without a section name it assumes 1 (and works its way up)
+  - commands exist on your system
+  - `man cp`, `man mkdir`, etc.
+  - `man history` doesn't quit work?
+  - some commands are builtin to the shell (bash)
+  - bash has `help`
+  - `help history`
+  - `help help`
+  - `compgen -b` will list all builtins
+  - `compgen -b | grep | less` # all of this stuff is the same!!
+  - `compgen -b > builtins.txt`
+  - `history | ... | ...` # because history is builtin!
+
+- Commands on your system
+  - `date`
+  - `cal`
+  - `uptime`
+  - `pwd`
+  - `w`
+  - `hostname`
+  - `who`
+  - `whoami`
+  - `users`
+  - `head`
+  - `tail`
+  - `sort`
+
+- Programs and Commands
+  - `which ls`, `which chmod`
+  - `which history` - this fails
+  - `type history` - this works
+  - `file file.txt`
+  - `file /usr/bin/ls`
+  - the `file` command tells us what type of file something is
+  - there's all sorts of programs/commands for us! how do we see them all?
+  - `echo $PATH`
+  - `echo $PATH | tr ':' '\n'`
+
+- Creating our first script!
+  - `bash ./script.sh`
+  - do we need to run `bash`?
+  - `chmod +x script.sh`
+  - `./script.sh` # why does this work??
+
+- File Permissions
+  - `stat script.sh`
+  - `stat /usr/bin/ls`
+  - `ls -lha .`
+  - explain users, group, world
+  - `chown`, `chmod`, `chgrp`
+
+- System Information
+  - `uptime` (load average)
+  - `free [-m]`
+  - `df -hP /`
+  - `du -csh`
+  - `ip addr` (this is a linux-ism)
+  - `top`
+
 
 ansi/ascii/control characters (ex: cat /bin/my-binary-file)
 
