@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+first_name='john'
+last_name='eddy'
+
+full_name="$first_name $last_name"
+
+if [[ $first_name == 'dave' ]]; then
+	echo "oh hey it's dave"
+fi
+
+echo "Hello $full_name!"

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+re='^(.*)@(.*\.com)$'
+input='dave@example.com'
+
+if [[ $input =~ $re ]]; then
+	echo match
+
+	#printf '<%s>\n' "${BASH_REMATCH[@]}"
+	full_string=${BASH_REMATCH[0]}
+	name=${BASH_REMATCH[1]}
+	domain=${BASH_REMATCH[2]}
+
+	echo "name is $name"
+else
+	echo no match
+fi

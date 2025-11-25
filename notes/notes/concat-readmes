@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+for d in */; do
+	bname=${d%/}
+	readme=${d}readme.md
+
+	echo ========================================
+	echo = $bname
+	echo ========================================
+	echo
+	cat "$readme"
+	echo
+	echo
+done

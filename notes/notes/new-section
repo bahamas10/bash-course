@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+section=${1-?}
+mkdir -p "$section"
+touch "$section/readme.md"
+echo "$section/readme.md"
+exec ${EDITOR:-vi} "$section/readme.md"

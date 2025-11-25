@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# edit these
+name=$(whoami)
+number=$((2 + 2))
+
+echo "name is $name, number is $number"

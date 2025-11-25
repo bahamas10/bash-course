@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# show finger command
+
+declare -A shells
+while IFS=: read -r name pass uid gid gecos home shell; do
+	# skip comments
+	if [[ $name == '#'* ]]; then
+		continue
+	fi
+
+	shells[$name]=$shell
+done < /etc/passwd
+
+echo "dave has the shell: ${shells[nobody]}"
