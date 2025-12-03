@@ -1,5 +1,6 @@
-```
+# Braces and Globbing
 
+```
 mkdir files
 echo files/{foo,bar,baz}.{jpg,txt}
 touch files/{foo,bar,baz}.{jpg,txt}

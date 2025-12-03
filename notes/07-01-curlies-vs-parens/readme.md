@@ -1,3 +1,5 @@
+# Curlies vs. Parens
+
 ``` bash
 greet() {
 	name=$1

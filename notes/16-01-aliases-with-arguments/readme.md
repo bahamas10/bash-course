@@ -1,3 +1,5 @@
+# Aliases with Arguments
+
 ```
 # mkdir and cd
 alias mkdc='mkdir $1 && cd $1'

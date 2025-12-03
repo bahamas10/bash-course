@@ -1,3 +1,5 @@
+# Customizing Bash
+
 ```
 1. shopt -s cdspell
 # show examples of types

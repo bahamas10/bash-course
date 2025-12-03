@@ -1,3 +1,6 @@
+# Arithmetic Expression
+
+``` bash
 echo $((2 + 2))
 echo $((18))
 
@@ -26,9 +29,11 @@ echo $?
 echo $?
 
 ((a = 5, b = 7))
+```
 
 ---
 
+``` bash
 a=06
 echo $a
 echo $(( a ))
@@ -40,3 +45,4 @@ a=08
 echo $(( a ))
 echo $(( 10#a ))
 echo $(( 10#$a ))
+```

@@ -1,3 +1,5 @@
+# Cursor Commands
+
 ```
 tput setaf 1 > file.txt
 

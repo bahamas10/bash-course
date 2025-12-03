@@ -1,3 +1,5 @@
+# Indexed Arrays
+
 ``` bash
 array=(foo bar baz)
 

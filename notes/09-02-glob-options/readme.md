@@ -1,3 +1,5 @@
+# Glob Shell Options
+
 ```
 mkdir empty
 ls empty

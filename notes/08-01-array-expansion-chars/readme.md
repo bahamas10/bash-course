@@ -1,3 +1,5 @@
+# Array Expansion
+
 ```
 for arg in $*; do
     echo "<$arg>"

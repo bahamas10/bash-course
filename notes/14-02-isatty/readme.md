@@ -1,3 +1,5 @@
+# Is a TTY
+
 ```
 ls
 ls | wc -l

@@ -1,4 +1,4 @@
-# Pager (big files)
+# Paging Files
 
 - `cat /usr/share/dict/words`
 - it's a big file and annoying let's do this

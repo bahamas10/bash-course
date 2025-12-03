@@ -1,3 +1,5 @@
+# PS1 Variable
+
 show bashrc i've been using this whole time
 
 

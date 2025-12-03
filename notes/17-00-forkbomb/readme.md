@@ -1,3 +1,5 @@
+# Forkbomb
+
 show bomb.txt
 
 unminify it

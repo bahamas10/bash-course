@@ -1,3 +1,6 @@
+# Basic Globbing
+
+```
 ls files/
 bar.jpg  bar.txt  baz.jpg  baz.txt  foo.jpg  foo.txt
 
@@ -15,3 +18,4 @@ ls -1 files/bar.*
 ls -1 files/ba?.txt
 
 ls -1 files/ba[rz].txt
+```

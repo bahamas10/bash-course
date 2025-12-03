@@ -1,5 +1,8 @@
+# Parameter Expansion
+
 == casing ==
 
+``` bash
 s='dave eddy'
 ${s^}
 ${s^^}
@@ -15,6 +18,7 @@ ${s,,D}
 ${s,D}
 ${s,,DA}
 ${s,,[DA]}
+```
 
 == default values ==
 

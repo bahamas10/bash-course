@@ -1,3 +1,5 @@
+# Process Substitution
+
 ```
 words=$(grep d /usr/share/dict/words)
 

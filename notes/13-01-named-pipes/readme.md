@@ -1,3 +1,5 @@
+# Named Pipes
+
 mkfifo pipe
 
 open tmux, split horizontally

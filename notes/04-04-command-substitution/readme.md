@@ -1,3 +1,5 @@
+# Command Substitution
+
 ``` bash
 thing='whatever'
 

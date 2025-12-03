@@ -1,4 +1,4 @@
-# File searching & paging
+# Searching in Files
 
 - show `/usr/share/dict/words`
 - grep it for dave

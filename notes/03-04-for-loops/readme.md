@@ -1,4 +1,4 @@
-# For loops
+# For Loops
 
 ``` bash
 for name in foo bar baz; do

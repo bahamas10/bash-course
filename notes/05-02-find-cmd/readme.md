@@ -1,3 +1,6 @@
+# Find Command
+
+``` bash
 find .
 
 find /var/empty
@@ -13,6 +16,7 @@ find /usr/share/ -type f -name '*.plist' -iname 'info*'
 find /usr/share/ -type f -name 'Info.plist' -exec echo the file is {} \;
 
 echo /usr/share/*
-for f in ...
+for f in ...; do
+```
 
 we'll talk more about that in the globbing section

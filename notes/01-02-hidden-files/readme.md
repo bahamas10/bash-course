@@ -1,4 +1,4 @@
-# Basic File Manipulation
+# Hidden Files
 
 - `touch .lesson.txt`
 - `ls`

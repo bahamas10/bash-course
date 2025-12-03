@@ -1,4 +1,4 @@
-- Take input (arguments and stdin)
+# User Input
 
 Modify the above 2 scripts to take from stdin
 

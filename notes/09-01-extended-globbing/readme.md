@@ -1,3 +1,5 @@
+# Extended Globbing
+
 ```
 set -H
 shopt -s extglob

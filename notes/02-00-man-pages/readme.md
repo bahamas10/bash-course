@@ -1,4 +1,4 @@
-# Man pages
+# Man Pages
 
 - show basic examples
 - `man man` - this is a fun one

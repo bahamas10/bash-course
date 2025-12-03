@@ -1,4 +1,4 @@
-# Actually Scripting!
+# Finally Scripting
 
 - Basic scripts
 

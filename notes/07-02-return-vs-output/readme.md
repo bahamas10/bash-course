@@ -1,3 +1,5 @@
+# Return vs. Output
+
 ```
 uname
 echo $?

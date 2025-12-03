@@ -1,4 +1,4 @@
-# Intro
+# Introduction
 
 - This course will teach you how to be comfortable on the shell writing
 scripts.

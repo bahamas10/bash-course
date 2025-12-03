@@ -1,3 +1,5 @@
+# Date Formatting
+
 ```
 datefmt='%m/%d/%Y %H:%M:%S'
 date "+$datefmt"

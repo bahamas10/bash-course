@@ -1,4 +1,4 @@
-# Editing a file in the terminal (vim crash course)
+# vim Crash Course
 
 - We're gonna use `vim` - don't be scared!
 - `vim file.txt`

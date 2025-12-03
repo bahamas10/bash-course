@@ -1,3 +1,5 @@
+# Associative Arrays
+
 ``` bash
 declare -A arr
 echo $?

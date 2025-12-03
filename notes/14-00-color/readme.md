@@ -1,3 +1,5 @@
+# Color Output
+
 ```
 echo '<bold>hello</bold>'
 echo -e '\e[1mhello'

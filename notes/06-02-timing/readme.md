@@ -1,3 +1,5 @@
+# Timing Commands
+
 time ls
 
 explain the 3 diff kinds

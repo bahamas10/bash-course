@@ -1,3 +1,5 @@
+# Bash Arguments
+
 ./00-simple-script
 
 bash ./00-simple-script
