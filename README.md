@@ -3,13 +3,12 @@
 Bash Course
 ===========
 
-The complete Bash Scripting Guide created by [Dave
+The Complete Bash Scripting Guide created by [Dave
 Eddy](https://www.daveeddy.com) of [ysap.sh](https://ysap.sh).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XXXXXXXXX"
-title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
-clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![YouTube Video](http://img.youtube.com/vi/KwRow9DdFJ0/0.jpg)](http://www.youtube.com/watch?v=KwRow9DdFJ0 "Complete Bash Scripting Guide - Full Bash Course by Dave Eddy")
+
+https://www.youtube.com/watch?v=KwRow9DdFJ0&t=7726s
 
 Learn the Bash Shell and master beginner all the way up to advanced Bash
 scripting techniques.
