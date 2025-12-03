@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+chapter=
+section=
+title=
+outfile=
+while getopts 'c:s:t:o:' opt; do
+	case "$opt" in
+		c) chapter=$OPTARG;;
+		s) section=$OPTARG;;
+		t) title=$OPTARG;;
+		o) outfile=$OPTARG;;
+		*) exit 1;;
+	esac
+done
+
+if [[ -z $chapter || -z $section || -z $title || -z $outfile ]]; then
+	echo 'Usage: make-metadata-image -c <chapter> -s <section> -t <title> -o <outfile>' >&2
+	exit 1
+fi
+
+FONT='./fonts/FiraMono-Bold.ttf'
+LOGO='./assets/logo.png'
+WIDTH=666
+HEIGHT=848
+
+TITLE_W=$((WIDTH - 20 * 2))
+TITLE_H=100
+
+magick -size "${WIDTH}x${HEIGHT}" xc:black \
+	-font "$FONT" -fill '#bbb' \
+	-kerning -2 \
+	\
+	-gravity north -pointsize 88 \
+	-annotate +0+13 "Chapter $chapter" \
+	-gravity north -pointsize 88 \
+	-annotate +0+110 "Section $section" \
+	\( \
+		-background none -fill '#bbb' \
+		-font "$FONT" -gravity north \
+		+pointsize \
+		-size "${TITLE_W}x${TITLE_H}" \
+		caption:"$title" \
+	\) -gravity north -geometry +0+220 -composite \
+	\
+	\( \
+		"$LOGO" \
+		-filter point -resize 500x500 \
+		-alpha on -channel A -evaluate set 7% +channel \
+	\) -gravity north -geometry +0+370 -composite \
+	\
+	-font "$FONT" -fill '#666' \
+	-gravity south -pointsize 36 \
+	-annotate +0+90  "author: Dave Eddy" \
+	-gravity south -pointsize 36 \
+	-annotate +0+50   "channel: @yousuckatprogramming" \
+	-gravity south -pointsize 36 \
+	-annotate +0+10   "website: https://course.ysap.sh" \
+	\
+	"$outfile"
+
+
+	#-font "$FONT" -fill '#C5C5C5' \

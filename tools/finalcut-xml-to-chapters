@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+#
+# im so sorry i don't know XML or xpath stuff.
+# this only needs to work once.
+#
+# Author: Dave Eddy <dave@daveeddy.com>
+# Date: December 02, 2025
+# License: MIT
+
+prevline=
+while read -r line; do
+	if [[ $line == *'<note>'* ]]; then
+		[[ -n $prevline ]] || exit 1
+
+		name=${line//<note>}
+		name=${name//<\/note>}
+
+		offset=${prevline#*offset=\"}
+		offset=${offset%%s\"*}
+
+		IFS=/ read -r offset num2 <<< "$offset"
+
+		if [[ -n $num2 ]]; then
+			((offset /= num2))
+		fi
+
+		TZ=UTC printf -v offset '%(%H:%M:%S)T' "$offset"
+
+		chapter=${name:1:2}
+		section=${name:4:2}
+		name=${name:7}
+
+		echo "$offset Chapter $chapter Section $section: $name"
+	fi
+	prevline=$line
+done

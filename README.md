@@ -29,7 +29,8 @@ following directories.
 
 - [foo/](foo/) - The same `foo` directory that was made during the course.
 - [notes/](notes/) - Notes and code for each section of the course.
-- [website/](website/) - scripts used for creating the [course.ysap.sh](https://course.ysap.sh) site.
+- [tools/](tools/) - Tools used during the course creation.
+- [website/](website/) - Scripts used for creating the [course.ysap.sh](https://course.ysap.sh) site.
 
 License
 -------
