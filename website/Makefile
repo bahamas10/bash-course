@@ -1,5 +1,5 @@
 .PHONY: serve
-server:
+serve:
 	python3 -mhttp.server
 
 # deploy the website

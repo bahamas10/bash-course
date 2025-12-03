@@ -127,3 +127,7 @@ div.notes {
 .screenshot {
 	width: 100%;
 }
+
+ul {
+	list-style-position: inside;
+}
