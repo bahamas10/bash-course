@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+#
+# concat all the readmes so I can easily look through them during recording.
+#
+# Author: Dave Eddy <dave@daveeddy.com>
+# Date: November 17, 2025
+# License: MIT
 
 for d in */; do
 	bname=${d%/}
