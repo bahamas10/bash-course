@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+. ./lib/greetings || exit 1
+
+goodbye dave
+goodbye john
+goodbye buddy

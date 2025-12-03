@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+s='dave eddy'
+len=${#s}
+
+for ((i = 0; i < len; i++)); do
+	c=${s:i:1}
+	echo "$c"
+done

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+greet() {
+	local name=$1
+	echo "hello $name (from func)"
+	return 5
+}
+
+for name in "$@"; do
+	greet "$name"
+done
+
+greet dave
+echo $?

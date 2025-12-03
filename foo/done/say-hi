@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+my-source() {
+	source -p ./lib "$1"
+}
+
+my-source greetings || exit 1
+
+greet dave
+greet john
+greet buddy

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+for thing in "$@"; do
+	echo "thing is $thing"
+done

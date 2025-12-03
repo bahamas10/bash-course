@@ -4,7 +4,7 @@ my-func() {
 	echo "hello world"
 }
 
-trap my-func SIGINFO || exit 1
+trap my-func SIGINT
 
 while true; do
 	sleep 1

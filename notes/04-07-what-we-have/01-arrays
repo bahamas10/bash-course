@@ -33,9 +33,7 @@ process-commands() {
 }
 
 cmd=$1
-echo "script called with arguments: $*"
 shift
-echo "script shifted to arguments: $*"
 
 case "$cmd" in
 	indexed)

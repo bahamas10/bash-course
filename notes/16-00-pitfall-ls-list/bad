@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-for f in `ls files`; do
+for f in $(ls files); do
 	echo "file is $f"
 done

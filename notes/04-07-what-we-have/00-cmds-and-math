@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# edit these
 name=$(whoami)
 number=$((2 + 2))
 

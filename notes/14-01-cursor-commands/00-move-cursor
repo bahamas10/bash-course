@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-#printf '\e[2J'
-#printf '\e[H'
-printf '\e7'
-printf '\e[20;20H'
-printf 'hello world'
-printf '\e8'
