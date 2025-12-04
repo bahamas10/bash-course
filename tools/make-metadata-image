@@ -51,13 +51,10 @@ magick -size "${WIDTH}x${HEIGHT}" xc:black \
 	\
 	-font "$FONT" -fill '#666' \
 	-gravity south -pointsize 36 \
-	-annotate +0+90  "author: Dave Eddy" \
+	-annotate +0+90 'author: Dave Eddy' \
 	-gravity south -pointsize 36 \
-	-annotate +0+50   "channel: @yousuckatprogramming" \
+	-annotate +0+50 'channel: @yousuckatprogramming' \
 	-gravity south -pointsize 36 \
-	-annotate +0+10   "website: https://course.ysap.sh" \
+	-annotate +0+10 'website: https://course.ysap.sh' \
 	\
 	"$outfile"
-
-
-	#-font "$FONT" -fill '#C5C5C5' \
