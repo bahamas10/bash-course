@@ -1,7 +1,7 @@
-Bash Course
+The Complete Bash Scripting Course
 ===========
 
-The Complete Bash Scripting Course created by [Dave
+Bash scripting course and guide created by [Dave
 Eddy](https://www.daveeddy.com) of [ysap.sh](https://ysap.sh).
 
 [![YouTube Video](http://img.youtube.com/vi/KwRow9DdFJ0/hqdefault.jpg)](
