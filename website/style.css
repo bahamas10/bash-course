@@ -95,7 +95,7 @@ a, a:visited {
 	border-radius: 50%;
 }
 
-h1.title {
+h1 {
 	margin-bottom: 21px;
 	margin-top: 18px;
 }
@@ -130,4 +130,8 @@ div.notes {
 
 ul {
 	list-style-position: inside;
+}
+
+#not-yet-released {
+	display: none;
 }
