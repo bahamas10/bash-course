@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#
+# Helper to make a new section directory
+#
+# Author: Dave Eddy <ysap@daveeddy.com>
+# Date: October 13, 2025
+# License: MIT
+
+section=${1-?}
+mkdir -p "$section"
+touch "$section/readme.md"
+echo "$section/readme.md"
+exec ${EDITOR:-vi} "$section/readme.md"

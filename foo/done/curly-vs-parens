@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+. ./lib/greetings || exit 1
+
+name='buddy'
+
+echo "before name = $name"
+greet dave
+echo "after name = $name"

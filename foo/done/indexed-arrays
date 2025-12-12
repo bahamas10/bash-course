@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+array=(
+	foo
+	bar
+	baz
+	'hello world'
+)
+
+IFS=,
+echo "array is: ${!array[*]}"

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+re='^(d|j).*$'
+input='dave'
+
+if [[ $input =~ $re ]]; then
+	echo match
+
+	printf '%s\n' "${BASH_REMATCH[@]}"
+	full_string=${BASH_REMATCH[0]}
+	name=${BASH_REMATCH[1]}
+else
+	echo no match
+fi

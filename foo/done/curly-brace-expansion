@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+arr=(/etc/{foo,bar}/{1,2,3}.txt)
+
+for item in "${arr[@]}"; do
+	echo "$item"
+done

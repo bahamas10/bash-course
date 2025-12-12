@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#
+# concat all the readmes so I can easily look through them during recording.
+#
+# Author: Dave Eddy <ysap@daveeddy.com>
+# Date: November 17, 2025
+# License: MIT
+
+for d in */; do
+	bname=${d%/}
+	readme=${d}readme.md
+
+	echo ========================================
+	echo = $bname
+	echo ========================================
+	echo
+	cat "$readme"
+	echo
+	echo
+done

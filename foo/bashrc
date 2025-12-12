@@ -1,0 +1,159 @@
+#!/usr/bin/env bash
+
+# If not running interactively, don't do anything
+[[ -n $PS1 ]] || return
+
+# Set environment
+export EDITOR='vim'
+export GREP_COLOR='1;36'
+export LSCOLORS='ExGxbEaECxxEhEhBaDaCaD'
+export PAGER='less'
+export TZ='America/New_York'
+export VISUAL='vim'
+export PATH=$PATH:/opt/homebrew/bin
+
+# Support colors in less
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 1)
+export LESS_TERMCAP_md=$(tput bold; tput setaf 1)
+export LESS_TERMCAP_me=$(tput sgr0)
+export LESS_TERMCAP_se=$(tput sgr0)
+export LESS_TERMCAP_so=$(tput bold; tput setaf 3; tput setab 4)
+export LESS_TERMCAP_ue=$(tput sgr0)
+export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 2)
+export LESS_TERMCAP_mr=$(tput rev)
+export LESS_TERMCAP_mh=$(tput dim)
+export LESS_TERMCAP_ZN=$(tput ssubm)
+export LESS_TERMCAP_ZV=$(tput rsubm)
+export LESS_TERMCAP_ZO=$(tput ssupm)
+export LESS_TERMCAP_ZW=$(tput rsupm)
+
+# Shell Options
+shopt -s cdspell
+shopt -s checkwinsize
+shopt -s extglob
+
+# Bash Version >= 4
+shopt -s autocd   2>/dev/null || true
+shopt -s dirspell 2>/dev/null || true
+
+# Aliases
+alias ..='echo "cd .."; cd ..'
+alias ag='rg' # sorry silver searcher
+alias chomd='chmod'
+alias externalip='curl -sS https://ysap.sh/ip'
+alias gerp='grep'
+alias hl='rg --passthru'
+alias l='ls'
+alias ll='ls -lha'
+alias suod='sudo'
+
+# Aliases (if applicable)
+grep --color=auto < /dev/null &>/dev/null &&
+    alias grep='grep --color=auto'
+
+xdg-open --version &>/dev/null &&
+    alias open='xdg-open'
+
+# Enable color support of ls
+if ls --color=auto /dev/null &>/dev/null; then
+	alias ls='ls -p --color=auto'
+else
+	alias ls='ls -p -G'
+fi
+
+make-prompt() {
+	local rst=$'\e[0m'
+	local bold=$'\e[1m'
+	local col1=$'\e[38;5;24m'
+	local col2=$'\e[38;5;54m'
+	local col3=$'\e[38;5;114m'
+	local col4=$'\e[38;5;84m'
+
+	# make prompt: "dave@ysap $ "
+
+	# username
+	PS1='\['$col1'\]dave\['$rst'\]'
+
+	# @
+	PS1+='\['$bold'\]\['$col2'\]@\['$rst'\]'
+
+	# hostname
+	PS1+='\['$col3'\]ysap '
+
+	# prompt character
+	PS1+='\['$col4'\]\$\['$rst'\] '
+}
+make-prompt
+
+# Prompt command
+_prompt_command() {
+        local user=$USER
+        local host=${HOSTNAME%%.*}
+        local pwd=${PWD/#$HOME/\~}
+        local ssh=
+        [[ -n $SSH_CLIENT ]] && ssh='[ssh] '
+        printf "\033]0;%s%s@%s:%s\007" "$ssh" "$user" "$host" "$pwd"
+}
+PROMPT_COMMAND=_prompt_command
+
+# print a colorized diff
+colordiff() {
+	local red=$(tput setaf 1 2>/dev/null)
+	local green=$(tput setaf 2 2>/dev/null)
+	local cyan=$(tput setaf 6 2>/dev/null)
+	local reset=$(tput sgr0 2>/dev/null)
+
+	diff -u "$@" | awk "
+	/^\-/ {
+		printf(\"%s\", \"$red\");
+	}
+	/^\+/ {
+		printf(\"%s\", \"$green\");
+	}
+	/^@/ {
+		printf(\"%s\", \"$cyan\");
+	}
+
+	{
+		print \$0 \"$reset\";
+	}"
+
+	return "${PIPESTATUS[0]}"
+}
+
+# Print all 256 colors
+colors() {
+	local i
+	for i in {0..255}; do
+		printf "\x1b[38;5;${i}mcolor %d\n" "$i"
+	done
+	tput sgr0
+}
+
+# Copy stdin to the clipboard
+copy() {
+	pbcopy 2>/dev/null ||
+	    xsel 2>/dev/null ||
+	    clip.exe
+
+}
+
+# print a rainbow if truecolor is available to the terminal
+truecolor-rainbow() {
+	local i r g b
+	for ((i = 0; i < 77; i++)); do
+		r=$((255 - (i * 255 / 76)))
+		g=$((i * 510 / 76))
+		b=$((i * 255 / 76))
+		((g > 255)) && g=$((510 - g))
+		printf '\033[48;2;%d;%d;%dm ' "$r" "$g" "$b"
+	done
+	tput sgr0
+	echo
+}
+
+# load completion
+. /etc/bash/bash_completion 2>/dev/null ||
+	. ~/.bash_completion 2>/dev/null
+
+true

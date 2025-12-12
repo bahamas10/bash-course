@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+a=08
+echo "$a"
+echo $(( 10#$a ))

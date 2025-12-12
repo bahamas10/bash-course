@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+mkdir -p out
+
+for f in ../notes/notes/*/readme.md; do
+	IFS=/ read -r _ _ _ dir _ <<< "$f"
+        IFS=- read -r chapter section _ <<< "$dir"
+        title=$(head -1 < "$f")
+        title=${title#\# }
+
+	newf=out/$dir.png
+
+	echo "$newf"
+	./make-metadata-image -s "$section" -c "$chapter" -o "$newf" -t "$title" || exit 1
+done

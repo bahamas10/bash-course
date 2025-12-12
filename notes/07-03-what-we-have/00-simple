@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# get shell
+cat /etc/passwd | grep dave | cut -d : -f 7

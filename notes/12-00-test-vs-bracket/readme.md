@@ -1,0 +1,11 @@
+# Brackets vs. Test
+help '[['
+help '['
+help test
+
+> run 00
+> run 01
+
+[ -f foo.txt ] ; echo $?
+which '['
+/bin/[ -f foo.txt ] ; echo $?
