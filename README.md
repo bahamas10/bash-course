@@ -7,9 +7,11 @@ Eddy](https://www.daveeddy.com) of [ysap.sh](https://ysap.sh).
 <!--
 [![YouTube Video](http://img.youtube.com/vi/KwRow9DdFJ0/hqdefault.jpg)](
 http://www.youtube.com/watch?v=KwRow9DdFJ0 "Complete Bash Scripting Guide - Full Bash Course by Dave Eddy")
--->
 
 - Watch on [YouTube](http://www.youtube.com/watch?v=KwRow9DdFJ0)
+-->
+
+(releases Monday, December 15th, 12:00pm EST)
 
 Learn the Bash Shell and master beginner all the way up to advanced Bash
 scripting techniques.
