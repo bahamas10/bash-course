@@ -20,32 +20,47 @@ RST=$'\e[0m'
 C1=$TEXT_COLOR
 C2=$GREEN_COLOR
 
+WIDTH=80
+
 cat <<-EOF
 
 
 
-
-$C1        ┏┳┓┓     ┏┓       ┓      $C2 ┳┓   ┓   ┏┓   •   •     $C1 ┏┓
-$C1         ┃ ┣┓┏┓  ┃ ┏┓┏┳┓┏┓┃┏┓╋┏┓ $C2 ┣┫┏┓┏┣┓  ┗┓┏┏┓┓┏┓╋┓┏┓┏┓ $C1 ┃ ┏┓┓┏┏┓┏┏┓
-$C1         ┻ ┛┗┗   ┗┛┗┛┛┗┗┣┛┗┗ ┗┗  $C2 ┻┛┗┻┛┛┗  ┗┛┗┛ ┗┣┛┗┗┛┗┗┫ $C1 ┗┛┗┛┗┻┛ ┛┗
-$C1                        ┛        $C2                ┛      ┛ $C1
+$C1         ┏┳┓┓     ┏┓       ┓      $C2 ┳┓   ┓   ┏┓   •   •     $C1 ┏┓
+$C1          ┃ ┣┓┏┓  ┃ ┏┓┏┳┓┏┓┃┏┓╋┏┓ $C2 ┣┫┏┓┏┣┓  ┗┓┏┏┓┓┏┓╋┓┏┓┏┓ $C1 ┃ ┏┓┓┏┏┓┏┏┓
+$C1          ┻ ┛┗┗   ┗┛┗┛┛┗┗┣┛┗┗ ┗┗  $C2 ┻┛┗┻┛┛┗  ┗┛┗┛ ┗┣┛┗┗┛┗┗┫ $C1 ┗┛┗┛┗┻┛ ┛┗
+$C1                         ┛        $C2                ┛      ┛ $C1
 
 
 EOF
 echo -n "$C1"
 
 items=(
-	'62 Sections'
-	'7+ Hours of content'
+	'7+ Hours'
+	'60+ Sections'
 	'Created by Dave Eddy'
+	'https://course.ysap.sh'
 )
+# calculate padding to center justify it first (look for longest line)
+longest=-1
 for item in "${items[@]}"; do
-	printf '%*s %s\n' 28 ' ' "$item"
+	# center justify it
+	len=${#item}
+	if ((len > longest)); then
+		longest=$len
+	fi
+done
+pad=$(((WIDTH - longest) / 2))
+for item in "${items[@]}"; do
+	len=${#item}
+	i=$(( pad + (longest - len) / 2))
+	((i -= 2)) # i eyeballed this
+	printf '%*s %s\n' "$i" ' ' "$item"
 done
 
 printf '\n\n'
 for color in "${LINE_COLORS[@]}"; do
-	printf '%s%s%*s%s\n' "$RST" "$color" 80 ' ' "$RST"
+	printf '%s%s%*s%s\n' "$RST" "$color" "$WIDTH" ' ' "$RST"
 done
 
 echo
