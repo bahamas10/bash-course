@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+#
+# make the curl-able version of the course
+#
+# Author: Dave Eddy <dave@daveeddy.com>
+# Date: December 13, 2025
+# License: MIT
+
+
+LINE_COLORS=(
+	$'\e[48;5;160m'
+	$'\e[48;5;202m'
+	$'\e[48;5;214m'
+)
+
+TEXT_COLOR=$'\e[38;5;223m'
+GREEN_COLOR=$'\e[38;5;120m'
+RST=$'\e[0m'
+
+C1=$TEXT_COLOR
+C2=$GREEN_COLOR
+
+cat <<-EOF
+
+
+
+
+$C1        ┏┳┓┓     ┏┓       ┓      $C2 ┳┓   ┓   ┏┓   •   •     $C1 ┏┓
+$C1         ┃ ┣┓┏┓  ┃ ┏┓┏┳┓┏┓┃┏┓╋┏┓ $C2 ┣┫┏┓┏┣┓  ┗┓┏┏┓┓┏┓╋┓┏┓┏┓ $C1 ┃ ┏┓┓┏┏┓┏┏┓
+$C1         ┻ ┛┗┗   ┗┛┗┛┛┗┗┣┛┗┗ ┗┗  $C2 ┻┛┗┻┛┛┗  ┗┛┗┛ ┗┣┛┗┗┛┗┗┫ $C1 ┗┛┗┛┗┻┛ ┛┗
+$C1                        ┛        $C2                ┛      ┛ $C1
+
+
+EOF
+echo -n "$C1"
+
+items=(
+	'62 Sections'
+	'7+ Hours of content'
+	'Created by Dave Eddy'
+)
+for item in "${items[@]}"; do
+	printf '%*s %s\n' 28 ' ' "$item"
+done
+
+printf '\n\n'
+for color in "${LINE_COLORS[@]}"; do
+	printf '%s%s%*s%s\n' "$RST" "$color" 80 ' ' "$RST"
+done
+
+echo
+echo -n "$TEXT_COLOR"
+printf '  %-61s %s\n' 'Bash Course' 'course.ysap.sh'
+echo
