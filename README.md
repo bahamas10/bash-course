@@ -4,14 +4,10 @@ The Complete Bash Scripting Course
 Bash scripting course and guide created by [Dave
 Eddy](https://www.daveeddy.com) of [ysap.sh](https://ysap.sh).
 
-<!--
-[![YouTube Video](http://img.youtube.com/vi/KwRow9DdFJ0/hqdefault.jpg)](
-http://www.youtube.com/watch?v=KwRow9DdFJ0 "Complete Bash Scripting Guide - Full Bash Course by Dave Eddy")
+[![YouTube Video](http://img.youtube.com/vi/Sx9zG7wa4FA/hqdefault.jpg)](
+http://www.youtube.com/watch?v=Sx9zG7wa4FA "Complete Bash Scripting Guide - Full Bash Course by Dave Eddy")
 
-- Watch on [YouTube](http://www.youtube.com/watch?v=KwRow9DdFJ0)
--->
-
-(releases Monday, December 15th, 12:00pm EST)
+- Watch on [YouTube](http://www.youtube.com/watch?v=Sx9zG7wa4FA)
 
 Learn the Bash Shell and master beginner all the way up to advanced Bash
 scripting techniques.
