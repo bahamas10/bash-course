@@ -65,5 +65,5 @@ done
 
 echo
 echo -n "$TEXT_COLOR"
-printf '  %-61s %s\n' 'Bash Course' 'course.ysap.sh'
+printf '  %-61s %s\n' 'Bash Course' 'course.ysap.sh' "$RST"
 echo
