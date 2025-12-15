@@ -44,7 +44,7 @@
 
 .shadow {
 	border: 1px solid #87ff8755; /* color3 */
-	box-shadow: 0 0 200px #87ff8794;
+	box-shadow: 0 0 80px #87ff8774;
 }
 
 @media (max-width: 650px) {
