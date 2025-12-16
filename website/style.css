@@ -98,6 +98,7 @@ a, a:visited {
 h1 {
 	margin-bottom: 21px;
 	margin-top: 18px;
+	line-height: 30px;
 }
 
 .footer {
@@ -107,7 +108,7 @@ h1 {
 
 ul.controls, ul.more, pre.terminal {
 	text-align: left;
-	width: 580px;
+	max-width: 580px;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -134,4 +135,14 @@ ul {
 
 #not-yet-released {
 	display: none;
+}
+
+.yt-container {
+	display: flex;
+	justify-content: center;
+}
+
+iframe {
+	aspect-ratio: 16 / 9;
+	width: 100% !important;
 }
