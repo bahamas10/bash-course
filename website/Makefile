@@ -13,5 +13,5 @@ serve: favicon.ico
 .PHONY: deploy
 deploy: favicon.ico index
 	rsync -avh --delete --progress \
-	    ./{index.txt,index.html,style.css,favicon.ico} \
+	    ./{index.txt,index.html,style.css,favicon.ico,download.html} \
 	    web:/var/www/course.ysap.sh/
