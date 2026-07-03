@@ -34,6 +34,6 @@ done
 
 ---
 
-Using `bash script`
-Using chmod +x
-Using `bash -n` to syntax check
+Using `bash script`  
+Using chmod +x  
+Using `bash -n` to syntax check  
